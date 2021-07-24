@@ -29,3 +29,11 @@ class ItemWidget extends StatelessWidget {
     );
   }
 }
+/*ListView.builder(
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: CatalogModel.items[index],
+                  );
+                },
+              )*/
