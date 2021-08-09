@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/items.dart';
-import 'package:flutter_catalog/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:faker/faker.dart';
 
@@ -56,7 +55,7 @@ class HomeDetailPage extends StatelessWidget {
                           .make(),
                       catalog.desc.text.xl.make(),
                       10.heightBox,
-                      faker.lorem.sentences(6).join().text.make().p16()
+                      faker.lorem.sentence().text.make()
                     ],
                   ).py64(),
                 ),
