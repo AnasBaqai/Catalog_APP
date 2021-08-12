@@ -1,6 +1,10 @@
 import 'package:flutter_catalog/models/items.dart';
 
 class CartModel {
+  static final cartModel = CartModel.internal();
+  CartModel.internal();
+  factory CartModel() => cartModel;
+
   // catalog field
   // ignore: unused_field
   late CatalogModel _catalog;
