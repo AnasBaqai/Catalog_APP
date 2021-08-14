@@ -1,18 +1,15 @@
 import 'package:flutter_catalog/models/items.dart';
 
 class CartModel {
-  static final cartModel = CartModel.internal();
-  CartModel.internal();
-  factory CartModel() => cartModel;
-
   // catalog field
   // ignore: unused_field
   late CatalogModel _catalog;
   // collection of  IDs
   final List<int> itemIDs = [];
 
+  // ignore: unnecessary_getters_setters
   CatalogModel get catalog => _catalog;
-
+  // ignore: unnecessary_getters_setters
   set catalog(CatalogModel newCatalog) {
     _catalog = newCatalog;
   }
