@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:flutter_catalog/utils/routes.dart';
 
 class CouponPage extends StatefulWidget {
   @override
