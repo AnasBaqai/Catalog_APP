@@ -5,6 +5,7 @@ import 'package:flutter_catalog/pages/home_page.dart';
 
 import 'package:flutter_catalog/pages/login.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:flutter_catalog/widgets/coupon.dart';
 import 'package:flutter_catalog/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -20,13 +21,14 @@ class myApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: MyRoutes.homeRoute,
+      //initialRoute: MyRoutes.homeRoute,
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.cartRoute: (context) => CartPage(),
+        MyRoutes.couponRoute: (context) => CouponPage()
       },
     );
   }

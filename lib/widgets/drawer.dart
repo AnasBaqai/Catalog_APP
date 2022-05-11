@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +14,11 @@ class MyDrawer extends StatelessWidget {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCAAmZtznsBoI4U4deySuutJDHG709dTAP-g&usqp=CAU";
     return Drawer(
       child: Container(
-        color: Colors.deepPurple,
+        color: Color(0xff403b58),
         child: ListView(
           children: [
-            DrawerHeader(
+            Container(
+                color: Color(0xff403b58),
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(
                     margin: EdgeInsets.zero,
@@ -57,6 +60,32 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Email",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.archivebox,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Archive",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.settings,
+                color: Colors.white,
+              ),
+              title: Text(
+                "settings",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,

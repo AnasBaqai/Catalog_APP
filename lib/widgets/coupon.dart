@@ -1,15 +1,16 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 
-class LoginPage extends StatefulWidget {
+class CouponPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _CouponPageState createState() => _CouponPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _CouponPageState extends State<CouponPage> {
   String name = "";
   bool changebutton = false;
   final _formKey = GlobalKey<FormState>();
@@ -21,10 +22,6 @@ class _LoginPageState extends State<LoginPage> {
         changebutton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
-      setState(() {
-        changebutton = false;
-      });
     }
   }
 
@@ -39,15 +36,15 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/images/hey.png",
+                  "assets/images/coupon.jpg",
                   fit: BoxFit.contain,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Text("Welcome $name",
+                Text("ADD COUPON",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                     )),
                 SizedBox(
@@ -60,48 +57,45 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
-                            hintText: "enter username", labelText: "Username"),
+                            hintText: "enter code", labelText: "Coupon code"),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return ("Username cannot be empty");
+                            return ("coupon code cannot be empty");
                           }
                           return null;
-                        },
-                        onChanged: (value) {
-                          name = value;
-                          setState(() {});
                         },
                       ),
                       TextFormField(
-                        obscureText: true,
                         decoration: InputDecoration(
-                          hintText: "enter password",
-                          labelText: "Password",
+                          hintText: "Description",
+                          labelText: "Description",
                         ),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return ("Password cannot be empty");
-                          } else if (value.length < 6) {
-                            return ("Passwrod length should be atleast 6 characters");
-                          } else if (value != 'anas123') {
-                            return ("password does not matched");
-                          }
-                          return null;
-                        },
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Type",
+                          labelText: "Coupon Type",
+                        ),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "OFFER PERCANTAGE/AMOUNT",
+                        ),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "START DATE",
+                        ),
                       ),
                       SizedBox(
                         height: 40.0,
                       ),
                       Material(
-                        borderRadius:
-                            BorderRadius.circular(changebutton ? 40 : 10),
                         color: context.theme.buttonColor,
                         child: InkWell(
-                          onTap: () => moveToHome(context),
                           child: AnimatedContainer(
                             duration: Duration(seconds: 1),
                             height: 40,
-                            width: changebutton ? 40 : 70,
                             alignment: Alignment.center,
                             child: changebutton
                                 ? Icon(
@@ -109,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                                     color: Colors.white,
                                   )
                                 : Text(
-                                    "Login",
+                                    "submit",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
